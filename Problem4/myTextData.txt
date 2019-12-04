@@ -1,0 +1,7 @@
+The file "myTextWindows.txt" was successfully read.
+
+Number of words:     139  
+Number of lines:     4    
+Longest word:        object-oriented
+Longest word length: 15   
+Average word length: 5.1  
