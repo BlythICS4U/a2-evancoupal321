@@ -32,10 +32,11 @@ public class Problem4 {
             double averageLength;
             String longestWord = "", currentWord = "";
             
-            while (fileLine != null) //Loop that counts lines
+            fileLine = br.readLine(); //Loop that counts lines
+            while (fileLine != null) 
             {
-                fileLine = br.readLine();
                 fileText = fileText + fileLine + " ";
+                fileLine = br.readLine();
                 lineCount++;
 
             }
