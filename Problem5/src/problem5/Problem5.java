@@ -20,7 +20,7 @@ public class Problem5 {
             String[][] teacherData = new String[50][3];
             String currentLine = "";
             StringTokenizer split = new StringTokenizer("");
-            int mathYears = 0, scienceYears = 0, techYears = 0, mathTeacherCount = 0, scienceTeacherCount = 0, techTeacherCount = 0;
+            int mathYears = 0, scienceYears = 0, techYears = 0, mathTeacherCount = 0, scienceTeacherCount = 0, techTeacherCount = 0, totalYears = 0, totalTeacherCount = 0;
             
             for (int i = 0; i < 50; i++) //Loop to read file and set teacher data
             {
@@ -39,6 +39,11 @@ public class Problem5 {
             
             for (int i = 0; i < 50; i++) //Reads through the teacherData array
             {
+                if (teacherData[i][1].equals("math") || teacherData[i][1].equals("science") || teacherData[i][1].equals("tech"))
+                {
+                    totalTeacherCount++;
+                    totalYears += Integer.parseInt(teacherData[i][2]);
+                }
                 if (teacherData[i][1].equals("math")) //If the teacher teaches math, add value to the corresponding variables
                 {
                     mathTeacherCount++;
@@ -59,12 +64,15 @@ public class Problem5 {
             double averageMathYears = mathYears / (double)mathTeacherCount; //Calculate averages
             double averageScienceYears = scienceYears / (double)scienceTeacherCount;
             double averageTechYears = techYears / (double)techTeacherCount;
+            double averageTotalYears = totalYears/ (double)totalTeacherCount;
             
             System.out.printf("%-1s%-1.2f%-1s", "Average teaching experience of math teachers: ", averageMathYears, " years"); //Print result
             System.out.println();
             System.out.printf("%-1s%-1.2f%-1s", "Average teaching experience of science teachers: ", averageScienceYears, " years");
             System.out.println();
             System.out.printf("%-1s%-1.2f%-1s", "Average teaching experience of tech teachers: ", averageTechYears, " years");
+            System.out.println();
+            System.out.printf("%-1s%-1.2f%-1s", "Average teaching experience of math, science, and tech teachers: ", averageTotalYears, " years");
         }
         catch (IOException ioe)
         {

@@ -36,7 +36,7 @@ public class Problem1 {
     
     public static double getF(double x) //Calculations
     {
-        return Math.sqrt(x-1);
+        return Math.sqrt(x+1);
     }
     public static double getG(double x)
     {
